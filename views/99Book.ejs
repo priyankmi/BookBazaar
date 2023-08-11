@@ -1,0 +1,24 @@
+<%- include('header') %>
+<div class="container mt-5">
+    <h1>My Books</h1>
+    <% if (books.length === 0) { %>
+      <p>No books found.</p>
+    <% } else { %>
+      <div class="row">
+        <% books.forEach(book => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="<%= book.bookImages[0] %>" class="card-img-top" alt="Book Image" style="height: 300px;">
+            <div class="card-body">
+              <h5 class="card-title"><%= book.title %></h5>
+              <p class="card-text"><strong>Category:</strong> <%= book.category %></p>
+              <p class="card-text"><strong>Price:</strong> ₹<%= book.price %></p>
+              <p class="card-text"><strong>Condition:</strong> <%= book.condition %></p>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+<%- include('footer') %>

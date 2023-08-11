@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookBazaar</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-xl bg-primary navbar-dark ">
+  <div class="container mb-auto">
+    <div class="navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/"><h5 class="text-white">BookBazaar</h5></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/99Book">₹99 Store</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/sell">Sell Book</a>
+          </li>
+      </ul>
+    </div>
+  
+    <div class="navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <% if (isAuthenticated) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/myBookAds">MyBookAds</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">Sign Up</a>
+          </li>
+        <% } %>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+

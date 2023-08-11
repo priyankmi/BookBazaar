@@ -1,0 +1,60 @@
+<%- include('header') %>
+<div class="container mt-5"> 
+
+  <div class="row">
+    <div class="col-md-6 mt-2">
+      <div id="bookCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% for (let i = 0; i < book.bookImages.length; i++) { %>
+            <li data-target="#bookCarousel" data-slide-to="<%= i %>" <%= i === 0 ? 'class="active"' : '' %>></li>
+          <% } %>
+        </ol>
+        <div class="carousel-inner">
+          <% book.bookImages.forEach((image, index) => { %>
+            <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+              <img src="<%= image %>" class="d-block w-100" alt="Book Photo">
+            </div>
+          <% }) %>
+        </div>
+        <a class="carousel-control-prev" href="#bookCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#bookCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-6 mt-2">
+      <h1><%= book.title %></h1>
+      <p>Category: <%= book.category %></p>
+      <p>Price: ₹<%= book.price %></p>
+      <p>Condition: <%= book.condition %></p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6 offset-md-6">
+      <h2>Contact Details</h2>
+      <p>Name: <%= book.ownerName %></p>
+      <p>Email: <%= book.contactEmail %></p>
+      <p>Contact No.: <%= book.contactNumber %> </p>
+      <p>Address: <%= book.address %></p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <h2>Description</h2>
+      <p><%= book.description %></p>
+    </div>
+  </div>
+
+</div>
+
+
+<%- include('footer') %>
+
+
